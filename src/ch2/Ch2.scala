@@ -1,9 +1,9 @@
-package functional_programming_in_scala.ch2
+package ch2
 
 /**
   * Created by pltc325 on 16/8/5.
   */
-object Exercises extends App {
+object Ch2 extends App {
   def e_2_1(n:Int):Int = {
     def fib(n:Int): Int = {
       if(n == 0) 0

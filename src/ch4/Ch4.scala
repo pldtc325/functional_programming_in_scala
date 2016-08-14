@@ -19,7 +19,7 @@ trait Option[+A] {
   }
 
   def map2[B,C](b:Option[B])(f: (A, B) => C):Option[C] = {
-    flatMap(aa => (b map (bb => f(aa,bb))))
+    flatMap(aa => b map (bb => f(aa,bb)))
   }
 
   def flatMap[B](f:A=>Option[B]):Option[B] = {
@@ -37,7 +37,7 @@ trait Option[+A] {
 case class Some[A](get:A) extends Option[A]
 object None extends Option[Nothing]
 
-object Exercises extends App {
+object Ch4 extends App {
   val f = (a:Int) => a + 1
   val fLifted = Other.lift(f)
   val r = fLifted(Some(1)).getOrElse(0)
